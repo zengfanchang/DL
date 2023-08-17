@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-08-17T14:57:54.633Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="mhnG_SFD5OVBxcqine8g" version="21.6.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-08-17T16:15:27.225Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="TWXstdsgIGfc67P_RgDK" version="21.6.8" type="github" pages="2">
   <diagram name="Vocab" id="Fe3QjJfHXWN7XtUSn2Vn">
     <mxGraphModel dx="1432" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -21,6 +21,29 @@
         </mxCell>
         <mxCell id="CXLgM0EVL0m1Kw1JCX3v-15" value="token_freqs返回单词-个数元组列表" style="html=1;whiteSpace=wrap;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" vertex="1" parent="1">
           <mxGeometry x="120" y="760" width="110" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="8KDD9RUaau6y96O-bS6K" name="读取长序列-随机采样">
+    <mxGraphModel dx="1432" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Kdi5XgOY802DzRHM1HBp-1" value="seq_data_iter_random:序列，批大小，步长" style="html=1;whiteSpace=wrap;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="150" y="200" width="480" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Kdi5XgOY802DzRHM1HBp-2" value="先对序列corpus进行随机裁剪，能够被划分的起始位置序列，打乱序列" style="html=1;whiteSpace=wrap;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="150" y="330" width="480" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Kdi5XgOY802DzRHM1HBp-3" value="data:得到pos:pos+steps的字串" style="html=1;whiteSpace=wrap;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="150" y="475" width="480" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Kdi5XgOY802DzRHM1HBp-4" value="每个序列的序列，把序列再分段&lt;br&gt;返回两端序列的迭代器，两者相差一个单位的字符" style="html=1;whiteSpace=wrap;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="140" y="620" width="480" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Kdi5XgOY802DzRHM1HBp-5" value="根据得到的随机数选取两个相邻的字符序列，然后从头开始遍历指定长度，选取长度" style="html=1;whiteSpace=wrap;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="750" y="330" width="480" height="110" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
